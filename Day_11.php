@@ -62,6 +62,28 @@
     foreach ($member as $a => $b){
         print "Name: " . "$a : $b" ."<br>";
     }
+    echo "<br><br>";
+    $num = 2;
+    for($num_1 = 1; $num_1 <=10; $num_1++){
+        $result = $num*$num_1;
+        print "$num x $num_1 = $result <br> "; 
+    }
+    echo "<br><br>";
+    $khmerDigits = ['០','១','២','៣','៤','៥','៦','៧','៨','៩'];
+    function toKhmer($numbers, $numChar){
+        global $khmerDigits;
+        $KhmerNumber = '';
+        foreach(str_split((string)$numbers) as $numChar ){
+            $KhmerNumber .= $khmerDigits[$numChar];
+        }
+        return $KhmerNumber;
+    }
+    $av = 3;
+    for($q = 1; $q <= 10; $q++){
+        $result = $av*$q;
+        print toKhmer($av, $khmerDigits)     . "x" .    toKhmer($q, $khmerDigits)    . "=" .    toKhmer($result, $khmerDigits) . "<br>";
+    }
+
  ?>
 
 </body>
